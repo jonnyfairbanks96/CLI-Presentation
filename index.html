@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Command Line</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Command Line is fun
+
+---
+
+# Agenda
+
+1. The Basics
+2. Advanced/Lesser known
+3. Why is the CLI useful?
+4. Scripting
+5. CLI Apps
+6. Your own CLI App
+
+---
+
+# The Basics
+What is the command line?
+- A user interface that is navigated by typing commands at prompts, instead of using the GUI.
+This can be the BASH Shell, ZSH Shell or the Command Prompt in windows (I won't be talking about the command prompt in windows)
+
+- Some of the basic commands we use all the time are:**`ls pwd cd cp mv rm mkdir`** and the list goes on. Heres a [cheat sheet](https://learncodethehardway.org/unix/bash_cheat_sheet.pdf).
+
+File navigation in the shell becomes very easy with practice.
+- **`cd <directory name>`** to change you directory
+- **`ls`** to list the storage of your current directory
+- **`pwd`** to print your current working directory
+
+Each of these commands are used a lot in your day to day work.
+
+---
+# Advanced/Lesser known
+
+Most command line tools are less known. (Here are some I just learned)
+
+- **`man`** this is the manual for each commmad. Lets run **`man ls`**
+
+This is pretty cool because now we can actually understand what each command actually does.
+- What about **`man chmod`**? What is `chmod`?
+
+This is the command to change file modes or Access Control Lists.
+- For example if we look into the manual **`chmod +x file`** allows the execute/search bits.
+- **`chmod -x file`** takes away those permissions
+- - -
+Some others I didn't know about but I think could have the potential to be useful.
+
+**`file filename, ps, top, lsof -i tcp:port`**
+
+---
+# Why is the CLI useful?
+
+Besides navigating files and moving them around what else can be done?
+
+A quick search in you files using grep. grep is useful in many ways but particularly file searching.
+
+**`grep -r hello *`** This will search all files and dirs recursively for the text 'hello' (case sensitive)
+
+grep can also use regex to find text in files. **`grep -r '[Hh]ello' *`**
+
+- - - 
+*Cool thing:*
+
+The shell also uses * for any 'wild card' scenarios.
+
+Say you want to delete any file with `.rb` at the end of it.
+
+Just run **`rm *.rb`** (this can be dangerous but useful if used right)
+
+
+---
+# Scripting
+
+Shell is very nice for writing your own [scripts](https://devhints.io/bash) if you don't want to re-run commands over and over again.
+
+Bash is it's own language...
+- We can do loops, functions, conditional logic, and much more.
+
+A simple hello loop. 
+
+`for i in {1..5}; do`
+
+`echo 'Hello from index' $i`
+
+`done`
+
+Say you want to use grep but hate typing you can make a function.
+
+`search() {`
+`grep -r $1 $2`
+`}`
+---
+# CLI Apps
+
+CLI Apps are everywhere.
+
+npm, yarn, homebrew, git, etc.
+
+However, not all have to be these, you can download and find as many of these as you'd like.
+
+A few I have found and like are: 
+- The Silver Searcher [AG](https://github.com/ggreer/the_silver_searcher)
+- Fuzzy Finder [FZF](https://github.com/junegunn/fzf)
+- Visual for ls [Tree](http://brewformulas.org/Tree)
+- Open your current git branch in your browswer [git open](https://github.com/paulirish/git-open)
+
+All of thes I have found to be useful and use each day.
+---
+# Lets build your own CLI app.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
