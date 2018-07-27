@@ -79,7 +79,7 @@ A quick search in you files using grep. grep is useful in many ways but particul
 
 grep can also use regex to find text in files. **`grep -r '[Hh]ello' *`**
 
-- - - 
+- - -
 *Cool thing:*
 
 The shell also uses * for any 'wild card' scenarios.
@@ -97,7 +97,7 @@ Shell is very nice for writing your own [scripts](https://devhints.io/bash) if y
 Bash is it's own language...
 - We can do loops, functions, conditional logic, and much more.
 
-A simple hello loop. 
+A simple hello loop.
 
 `for i in {1..5}; do`
 
@@ -119,7 +119,7 @@ npm, yarn, homebrew, git, etc.
 
 However, not all have to be these, you can download and find as many of these as you'd like.
 
-A few I have found and like are: 
+A few I have found and like are:
 - The Silver Searcher [AG](https://github.com/ggreer/the_silver_searcher)
 - Fuzzy Finder [FZF](https://github.com/junegunn/fzf)
 - Visual for ls [Tree](http://brewformulas.org/Tree)
@@ -128,6 +128,18 @@ A few I have found and like are:
 All of thes I have found to be useful and use each day.
 ---
 # Lets build your own CLI app.
+
+`gem install OptionParser`
+
+`touch app.rb`
+
+`chmod +x app.rb`
+
+In your app.rb add:
+
+`#!/usr/bin/env ruby`
+
+`require 'optparse'`
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
